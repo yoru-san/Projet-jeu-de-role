@@ -5,14 +5,17 @@ var direction = {
   "HAUT"   : 8
 }
 
-function character(x=0,y=0,direction=2) {
-  this.x = x; //(case)
-  this.y = y; //(case)
-  this.direction = direction;
-  this.name;
-  this.id;
+var character = {
+  name : "",
+  x : 0,
+  y : 0,
 
-
+  generate = function (name,x,y) {
+    this.name = name;
+    this.x = x;
+    this.y = y;
+    this.inventory = new Inventory();  
+  }
 
   move = function(direction)  {
     var coord = {'x' : this.x, 'y' : this.y};
@@ -31,4 +34,16 @@ function character(x=0,y=0,direction=2) {
       break;
     }
   }
+};
+
+/*function character(x,y,direction=2) {
+  this.x = x; //(case)
+  this.y = y; //(case)
+  this.direction = direction;
+  this.name;
+  this.id;
+
+*/
+
+
 }
