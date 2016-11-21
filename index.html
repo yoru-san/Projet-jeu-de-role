@@ -63,12 +63,29 @@
 				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
 
 
+				map.onClick =
+					function (id_clicked){
+						console.log("id de la cellule cliquée: " + id_clicked);
+						var cell = document.getElementById(id_clicked);
+						if(cell.className == 'cell blue'){
+							cell.className='cell';
+						}
+						else{
+							cell.className='cell blue';
+						}
 
-				loadHTML('detailForm','html/forms/artefact.html');
-				loadHTML('detailMenu','html/detailMenu.html');
-				// ces 2 chargements sont en erreur
-				loadHTML('detailsMenu','html/detailMenu.html'); // id introuvable
-				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
+						loadHTML("detailForm", 'html/forms/cell.html',
+							function(){
+								console.log('detailForm chargé pour '+id_clicked);
+								document.getElementById('cellForm')['cellId'].value=id_clicked;
+								map.loadCellForm('cellForm', id_clicked);
+							}
+						);
+					};
+
+
+
+
 
 			</script>
 			<!--
