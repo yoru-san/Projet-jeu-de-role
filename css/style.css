@@ -48,12 +48,12 @@ h2 {
 
 .cell:active {
 	background-color: #0f0;
-	
+
 }
 
 .cell:focus {
 	background-color: #00f;
-	
+
 }
 
 

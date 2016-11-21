@@ -5,7 +5,7 @@
 function Map(name, w, h, containerWidth){
 	//////// PROPRIÉTÉS /////////
 	/////////////////////////////
-	
+
 	// largeur en px du container
 	this.containerWidth = containerWidth;
 	// largeur en px du border de la cellule
@@ -14,11 +14,11 @@ function Map(name, w, h, containerWidth){
 	this.debug = false;
 	// les cells
 	this.cells = {}
-	
-	
+
+
 	////////// METHODES /////////
 	/////////////////////////////
-	
+
 	/* 	methode log
 		console.log() conditionnel : affiche le log si this.debug == true
 		name: le nom
@@ -27,7 +27,7 @@ function Map(name, w, h, containerWidth){
 		if(this.debug)
 			console.log(msg);
 	}
-	
+
 	/* 	methode setName
 		définir le nom de la map
 		name: le nom
@@ -35,7 +35,7 @@ function Map(name, w, h, containerWidth){
 	this.setName = function (name){
 		this.name = name;
 	};
-	
+
 	/* 	methode setSize
 		définir la taille de la grille
 		w & h: largeur & hauteur en nb de cellules
@@ -56,7 +56,7 @@ function Map(name, w, h, containerWidth){
 		out += "</div>\n";
 		return out;
 	};
-	
+
 	/* 	methode getHTMLTitle
 		renvoi le code HTML qui affiche le nom de la grille
 	*/
@@ -65,8 +65,8 @@ function Map(name, w, h, containerWidth){
 		out +=this.getHTMLRow('<h2>'+this.name+'</h2>');
 		return out;
 	};
-	
-	
+
+
 	/* 	methode getHTMLCell
 		renvoi le code HTML d'une cellule
 		x:cooordonnée en abscisse
@@ -88,7 +88,7 @@ function Map(name, w, h, containerWidth){
 		out += '<div ' + attributes+'></div>';
 		return out;
 	};
-	
+
 	/* 	methode drawGrid
 		Dessine la grille via document.write
 	*/
@@ -108,7 +108,7 @@ function Map(name, w, h, containerWidth){
 		this.log(out);
 		return out;
 	};
-	
+
 	/* fonction saveCellForm
 		fonction qui sauve la cell en fonction des infos du formulaire
 	*/
@@ -116,7 +116,7 @@ function Map(name, w, h, containerWidth){
 		var el_form = document.querySelector('#'+formId);
 		var cellId = el_form[0].value;
 		console.log('cellId:'+cellId);
-		
+
 		console.log(el_form.length+ " champs dans le formulaire "+formId);
 		this.cells[cellId] = {};
 		for(var i=0; i<el_form.length; i++){
@@ -124,7 +124,7 @@ function Map(name, w, h, containerWidth){
 			if(!fieldName)
 				continue;
 			console.log(
-				'name:'+el_form[i].name  
+				'name:'+el_form[i].name
 				+' '+
 				'value:'+el_form[i].value
 				+' '+
@@ -146,30 +146,30 @@ function Map(name, w, h, containerWidth){
 				name:el_form[i].name,
 				id:el_form[i].id,
 			};*/
-			
+
 		}
-		
+
 		console.log(this.cells);
 		localStorage.cells =  JSON.stringify(this.cells);
 	}
-	
+
 	// EVENEMENTS
 	/////////////////////////////
-	
+
 	this.onClick = function(id_clicked){
 		console.log("map.onClick:"+id_clicked);
 		//console.log(localStorage.cells);
 	};
-	
-	
-	
+
+
+
 	////// INITIALISATION ///////
 	/////////////////////////////
-	
+
 	// INITIALISATION via SETTERS
 	this.setName(name);
 	this.setSize(w,h);
-	
+
 	// initilisation des cells
 	var nb_cells=0;
 	if(localStorage.cells){

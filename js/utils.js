@@ -3,7 +3,7 @@
 */
 function getXMLHttpRequest() {
 	var xhr = null;
-	
+
 	if (window.XMLHttpRequest || window.ActiveXObject) {
 		if (window.ActiveXObject) {
 			try {
@@ -12,13 +12,13 @@ function getXMLHttpRequest() {
 				xhr = new ActiveXObject("Microsoft.XMLHTTP");
 			}
 		} else {
-			xhr = new XMLHttpRequest(); 
+			xhr = new XMLHttpRequest();
 		}
 	} else {
 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
 		return null;
 	}
-	
+
 	return xhr;
 }
 
@@ -44,7 +44,7 @@ function loadHTML(id, filename, callback=false){
 
 /* fonction setHTMLById
 	place le contenu fourni dans dans un élément défini par ID
-	id: id de l'element 
+	id: id de l'element
 	content: contenu à placer
 */
 function setHTMLById(id, content){
@@ -57,7 +57,7 @@ function setHTMLById(id, content){
 		console.error("setHTMLById: "+id+ " not found");
 		return false;
 	}
-	
+
 }
 
 /* fonction objectToAttributes
