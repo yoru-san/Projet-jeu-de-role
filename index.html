@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet"  />
+		<script type="text/javascript">
+			localStorage.version="0.2";
+		</script>
+		<script src="js/utils.js"></script>
+		<script src="js/Map.class.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="detail">
+				<div class="row">
+					<h2>Détails</h2>
+					<div class="row" id='detailMenu'></div>
+					<div class="row" id='detailForm'>
+						<i>Cliquez sur la carte pour avoir le détail</i>
+					</div>
+				</div>
+			</div>
+			<script>
+				// initialisation et affichage de la map
+				var map = new Map('ma grille', 5,5, 500);
+				map.drawGrid();
+
+				// mise en place du gestionnaire de clicks
+				map.onClick =
+					function (id_clicked){
+						console.log("id de la cellule cliquée: " + id_clicked);
+						var cell = document.getElementById(id_clicked);
+						if(cell.className == 'cell blue'){
+							cell.className='cell';
+						}
+						else{
+							cell.className='cell blue';
+						}
+
+						loadHTML("detailForm", 'html/forms/cell.html',
+							function(){
+								console.log('detailForm chargé pour '+id_clicked);
+								document.getElementById('cellForm')['cellId'].value=id_clicked;
+								map.loadCellForm('cellForm', id_clicked);
+							}
+						);
+					};
+				//console.log(map);
+
+				// test de la fonction  objectToAttributes()
+				var attrs = {
+					"a":10,
+					"b":"20px",
+					'color':'red'
+					};
+				console.log(attrs);
+				console.log(objectToAttributes(attrs));
+
+				// test du chargement de fichier ajax
+				loadHTML('detailForm','html/forms/artefact.html');
+				loadHTML('detailMenu','html/detailMenu.html');
+				// ces 2 chargements sont en erreur
+				loadHTML('detailsMenu','html/detailMenu.html'); // id introuvable
+				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
+
+
+
+				loadHTML('detailForm','html/forms/artefact.html');
+				loadHTML('detailMenu','html/detailMenu.html');
+				// ces 2 chargements sont en erreur
+				loadHTML('detailsMenu','html/detailMenu.html'); // id introuvable
+				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
+
+			</script>
+			<!--
+			ANCIEN CODE HTML
+			<div class="map">
+				<div class="row">
+					<h2>Carte</h2>
+				</div>
+				<div class="row">
+					<div class="cell" id="c1.1" onclick="alert('hello');">
+						<a href="javascript:;"></a>LIEN</a>
+					</div>
+					<div class="cell" id="c1.2" onclick="this.className+=' RS659367670NL red'"></div>
+					<div class="cell" id="c1.3"></div>
+					<div class="cell" id="c1.4"></div>
+				</div>
+				<div class="row">
+					<div class="cell" id="c2.1"></div>
+					<div class="cell" id="c2.2"></div>
+					<div class="cell" id="c23"></div>
+					<div class="cell" id="c2.4"></div>
+				</div>
+				<div class="row">
+					<div class="cell" id="c3.1"></div>
+					<div class="cell" id="c3.2"></div>
+					<div class="cell" id="c3.3"></div>
+					<div class="cell" id="c3.4"></div>
+				</div>
+				<div class="row">
+					<div class="cell" id="c4.1"></div>
+					<div class="cell" id="c4.2"></div>
+					<div class="cell" id="c4.3"></div>
+					<div class="cell" id="c4.4"></div>
+				</div>
+			</div>
+			-->
+		</div>
+	</body>
+</html>

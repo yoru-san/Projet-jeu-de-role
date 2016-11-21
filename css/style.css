@@ -1,0 +1,93 @@
+
+body{
+	font-family:verdana;
+}
+h2 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* layout principale */
+.container {
+	width: 1000px;
+	border: solid 2px #ccc;
+	margin: auto;
+	height: 1000px;
+	border-radius: 4px;
+}
+
+.row {
+	width:100%;
+	margin:5px;
+}
+
+.cell {
+	width: 120px;
+	height: 120px;
+	border: solid 1px #999;
+	float: left;
+	background-color: #ccc;
+	cursor: none;
+	border-radius: 20px;
+}
+
+.map {
+	width: 500px;
+	float: right;
+}
+.detail {
+	width: 499px;
+	float: left;
+}
+.cell:hover {
+	background-color: #f00;
+	border: solid 1px #c00;
+}
+
+.cell:active {
+	background-color: #0f0;
+	
+}
+
+.cell:focus {
+	background-color: #00f;
+	
+}
+
+
+/* couleurs */
+
+.red{
+	background:red;
+}
+
+.blue{
+	background:blue;
+}
+
+
+/* menu haut gauche */
+
+.detailMenu {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+    width: 480px;
+}
+
+.detailMenu li {
+    list-style-type: none;
+    background-color: #eee;
+    padding: 4px 10px;
+    margin: 0px 10px;
+    /* width: 30%; */
+    /* float: left; */
+    display: inline-block;
+}
+
+.detailMenu li:hover {
+    background-color: #666;
+    color: white;
+}

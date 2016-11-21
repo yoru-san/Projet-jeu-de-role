@@ -1,0 +1,23 @@
+<p>
+	<form id="cellForm" name="cellForm">
+		ID de la cellule : <input type="text" name="cellId" /><br>
+		Nom de la cellule : <input type="text" name="cellName" /><br>
+		Type de la cellule : 
+		<select name="cellType">
+			<option value="artefact">Artefact</option>
+			<option value="perso">Perso</option>
+		</select><br>
+		<b>Description</b><br>
+		<textarea name="cellDescription" placeholder="Entrez une description"></textarea><br>
+		
+		<b>Cell Flags</b><br>
+		<input type="checkbox" name="cellFlagFranchissable"/> Franchissable<br>
+		<input type="checkbox" name="cellFlagTrap"/> Trap<br>
+		<input type="button" onclick="map.saveCellForm('cellForm')" value="Sauver"/>
+		
+		
+	</form>
+	
+	
+	
+</p>
