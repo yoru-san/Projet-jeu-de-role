@@ -7,6 +7,7 @@
 		</script>
 		<script src="js/utils.js"></script>
 		<script src="js/Map.class.js"></script>
+        <script src="js/Character.class.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -21,13 +22,13 @@
 			</div>
 			<script>
 				// initialisation et affichage de la map
-				var map = new Map('ma grille', 20, 20, 50);
-				var pacman = new pj
-				pacman.setPostion(10,10)
+				var map = new Map('ma grille', 5,5, 500);
+                var pacman = new Character();
+				pacman.setPosition(10,10);
 				map.drawGrid();
-
+				
 				// mise en place du gestionnaire de clicks
-				map.onClick =
+				map.onClick = 
 					function (id_clicked){
 						console.log("id de la cellule cliquée: " + id_clicked);
 						var cell = document.getElementById(id_clicked);
@@ -37,13 +38,13 @@
 						else{
 							cell.className='cell blue';
 						}
-
-						loadHTML("detailForm", 'html/forms/cell.html',
+						
+						loadHTML("detailForm", 'html/forms/cell.html', 
 							function(){
 								console.log('detailForm chargé pour '+id_clicked);
 								document.getElementById('cellForm')['cellId'].value=id_clicked;
 								map.loadCellForm('cellForm', id_clicked);
-							}
+							} 
 						);
 					};
 				//console.log(map);
@@ -56,15 +57,15 @@
 					};
 				console.log(attrs);
 				console.log(objectToAttributes(attrs));
-
+				
 				// test du chargement de fichier ajax
 				loadHTML('detailForm','html/forms/artefact.html');
 				loadHTML('detailMenu','html/detailMenu.html');
 				// ces 2 chargements sont en erreur
 				loadHTML('detailsMenu','html/detailMenu.html'); // id introuvable
 				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
-
-
+				
+				
 			</script>
 			<!--
 			ANCIEN CODE HTML
