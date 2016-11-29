@@ -1,5 +1,3 @@
-//test pour Nathan
-
 <html>
 	<head>
 		<meta charset="utf-8"/>
@@ -23,13 +21,13 @@
 				</div>
 			</div>
 			<script>
-				// initialisation et affichage de la map
+				// Initialisation et affichage de la map
 				var map = new Map('ma grille', 5,5, 500);
         var pacman = new Character();
 				pacman.setPosition(10,10);
 				map.drawGrid();
 
-				// mise en place du gestionnaire de clicks
+				// Mise en place du gestionnaire de clicks
 				map.onClick =
 					function (id_clicked){
 						console.log("id de la cellule cliquée: " + id_clicked);
