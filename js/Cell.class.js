@@ -6,11 +6,12 @@ function Cell(x_pos, y_pos){
     this.patGum = false;
     this.wall = false;
     this.Character = false
+
 }
 
-  this.getIdFromPosition = function(x,y) {
-    this.x(x,y) = x;
-    this.y(x,y) = y;
+function getIdFromPosition(x, y) {
+    var id = "c"+x+"-"+y;
+    return id;
 }
 
 /*  this.life = function () {
