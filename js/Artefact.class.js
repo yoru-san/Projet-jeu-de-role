@@ -1,13 +1,11 @@
-function Artefact (){
-
-    this.id;
-    this.nom;
-
-    generate = function (id, nom){
-
-        this.id = id;
-        this.nom = nom;
-
+function Artefact (x_pos = null, y_pos = null){
+    
+    this.x;
+    this.y;
+    
+    this.setPosition = function(x_pos, y_pos){
+        this.x = x_pos;
+        this.y = y_pos;
     }
 }
 

@@ -8,6 +8,7 @@
 		<script src="js/utils.js"></script>
 		<script src="js/Map.class.js"></script>
         <script src="js/Character.class.js"></script>
+        <script src="js/Cell.class.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -24,7 +25,7 @@
 				// initialisation et affichage de la map
 				var map = new Map('ma grille', 5,5, 500);
                 var pacman = new Character();
-				pacman.setPosition(10,10);
+				pacman.setPosition(5,5);
 				map.drawGrid();
 				
 				// mise en place du gestionnaire de clicks
