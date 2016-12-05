@@ -7,8 +7,8 @@ function Cell(x_pos, y_pos){
     this.wall = false;
 }
 
-function addwall(x,y) {
-    return cell.wall(x,y) = true;
+function wall(x,y) {
+    new cell.wall(x,y) = true;
 }
 
 function getIdFromPosition(x,y) {
