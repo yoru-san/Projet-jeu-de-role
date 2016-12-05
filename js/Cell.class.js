@@ -8,6 +8,6 @@ function Cell(x_pos, y_pos){
 }
 
   this.getIdFromPosition = function(x,y) {
-    cell.x(x,y) = x;
-    cell.y(x,y) = y;
+    this.x(x,y) = x;
+    this.y(x,y) = y;
 }
