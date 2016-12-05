@@ -6,6 +6,12 @@ function Cell(x_pos, y_pos){
     this.patGum = false;
     this.wall = false;
     this.Character = false
+    
+    this.setPos = function(x, y){
+        this.x = x;
+        this.y = y;
+        
+    }
 
 }
 

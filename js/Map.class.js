@@ -15,7 +15,15 @@ function Map(name, w, h, containerWidth){
 	// les cells
 	this.cells = {}
 
-
+    this.getCell = function (x,y){
+        var cellId = getIdFromPosition(x, y);
+        return this.cells[cellId];
+    }
+    
+    this.setCell = function (x, y, cell){
+        var cellId = getIdFromPosition(x, y);
+        this.cells[cellId] = cell;
+    }
 	////////// METHODES /////////
 	/////////////////////////////
 
