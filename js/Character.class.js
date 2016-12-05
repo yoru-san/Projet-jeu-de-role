@@ -1,3 +1,4 @@
+
 function Character (){
     
     this.name = "test";

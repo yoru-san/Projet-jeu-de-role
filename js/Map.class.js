@@ -13,9 +13,7 @@ function Map(name, w, h, containerWidth){
 	// activer debugage de la class (true/false)
 	this.debug = false;
 	// les cells
-	this.cells = {
-        
-    }
+	this.cells = {}
 
 
 	////////// METHODES /////////

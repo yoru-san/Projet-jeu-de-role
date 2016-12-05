@@ -22,14 +22,15 @@
 				</div>
 			</div>
 			<script>
-				// initialisation et affichage de la map
+				// Initialisation et affichage de la map
 				var map = new Map('ma grille', 5,5, 500);
+                
                 var pacman = new Character();
 				pacman.setPosition(5,5);
 				map.drawGrid();
-				
-				// mise en place du gestionnaire de clicks
-				map.onClick = 
+
+				// Mise en place du gestionnaire de clicks
+				map.onClick =
 					function (id_clicked){
 						console.log("id de la cellule cliquée: " + id_clicked);
 						var cell = document.getElementById(id_clicked);
@@ -39,13 +40,13 @@
 						else{
 							cell.className='cell blue';
 						}
-						
-						loadHTML("detailForm", 'html/forms/cell.html', 
+
+						loadHTML("detailForm", 'html/forms/cell.html',
 							function(){
 								console.log('detailForm chargé pour '+id_clicked);
 								document.getElementById('cellForm')['cellId'].value=id_clicked;
 								map.loadCellForm('cellForm', id_clicked);
-							} 
+							}
 						);
 					};
 				//console.log(map);
@@ -58,15 +59,15 @@
 					};
 				console.log(attrs);
 				console.log(objectToAttributes(attrs));
-				
+
 				// test du chargement de fichier ajax
 				loadHTML('detailForm','html/forms/artefact.html');
 				loadHTML('detailMenu','html/detailMenu.html');
 				// ces 2 chargements sont en erreur
 				loadHTML('detailsMenu','html/detailMenu.html'); // id introuvable
 				loadHTML('detailsMenu','not-exists.html');		// resource introuvable
-				
-				
+
+
 			</script>
 			<!--
 			ANCIEN CODE HTML
